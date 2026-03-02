@@ -42,10 +42,9 @@ const sidebarLinks = [
 
 export function AppSidebar() {
   return (
-    <Sidebar className=" h-full  ">
+    <Sidebar className="ring-primary ring-1  h-full  ">
       {/* <Sidebar className="  "> */}
-      <SidebarHeader className="  ">
-        {" "}
+      <SidebarHeader>
         <Image src={"/logo.webp"} alt="logo" height={120} width={120} />
       </SidebarHeader>
 

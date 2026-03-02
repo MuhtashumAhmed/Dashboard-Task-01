@@ -44,7 +44,7 @@ export default function RootLayout({
 
             <div className="flex flex-col  w-full px-2 md:px-4  ">
               <Header />
-              <main className="flex-1" >
+              <main className="flex-1 mt-2 " >
               {children}
 
               </main>

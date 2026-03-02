@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="w-full border-t ">
+    <footer className="w-full border-t mt-12 ">
       <div className="mx-auto flex  flex-col gap-2 px-4 py-3 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
         {/* Left: brand */}
         <div className="flex flex-col">
