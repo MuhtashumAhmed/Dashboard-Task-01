@@ -66,8 +66,8 @@ export function AppSidebar() {
                         asChild
                         className={`${
                           active
-                            ? "bg-primary w-auto  hover:text-white text-white dark:text-zinc-900  hover:bg-primary"
-                            : "hover:bg-primary hover:text-white hover:dark:text-zinc-900"
+                            ? "bg-primary w-auto  hover:text-white text-white   hover:bg-primary"
+                            : "hover:bg-primary hover:text-white "
                         } `}
                       >
                         <Link href={item?.url}>

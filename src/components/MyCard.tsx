@@ -15,7 +15,7 @@ interface cardProps {
 }
 
 const MyCard = ({ users }: cardProps) => {
-  console.log(users);
+  //   console.log(users);
 
   return (
     <Card className="shadow hover:shadow-primary hover:-translate-y-2 transition-all ease-in ">

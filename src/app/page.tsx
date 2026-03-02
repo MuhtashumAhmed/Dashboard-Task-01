@@ -5,6 +5,8 @@ import { Users } from "@deemlol/next-icons";
 import MyTable from "@/components/MyTable";
 import Link from "next/link";
 import { Link as ExternalLink } from "@deemlol/next-icons";
+import Bargraph from "@/components/Bargraph";
+import PieChartComponent from "@/components/PieChartComponent";
 
 const columns = [
   { label: "Name", key: "name" },
@@ -14,7 +16,7 @@ const columns = [
   {
     label: "Website",
     key: "website",
-    render: (user) => (
+    render: (user: any) => (
       <div className="flex items-end gap-1">
         <ExternalLink size={12} />
         <Link
@@ -55,7 +57,13 @@ export default async function Home() {
       </div>
 
       {/* chart */}
-      <div>charts here</div>
+      {/* <div className="flex gap-4"> */}
+      <div className="flex  gap-3 flex-wrap min-h-96 ">
+        <div className="flex-1 ">
+          <Bargraph />
+        </div>
+        <PieChartComponent />
+      </div>
 
       {/* table */}
       <div className="flex flex-col gap-6 pb-4">
