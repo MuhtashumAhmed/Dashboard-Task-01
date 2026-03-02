@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Link as ExternalLink } from "@deemlol/next-icons";
 import Bargraph from "@/components/Bargraph";
 import PieChartComponent from "@/components/PieChartComponent";
+import { Spinner } from "@/components/ui/spinner";
 
 const columns = [
   { label: "Name", key: "name" },
@@ -44,7 +45,7 @@ export default async function Home() {
     <div className="   flex flex-col gap-4 pb-4 ">
       {/* top cards */}
       <div>
-        <Card className="w-2xs py-3 border-primary/30 ">
+        <Card className=" md:w-2xs py-3 border-primary/30 ">
           <CardContent className="flex flex-col gap-2">
             <div className="flex gap-4 ">
               <Users size={18} />
@@ -57,7 +58,7 @@ export default async function Home() {
       </div>
 
       {/* chart */}
-      {/* <div className="flex gap-4"> */}
+
       <div className="flex  gap-3 flex-wrap min-h-96 ">
         <div className="flex-1 ">
           <Bargraph />
@@ -66,9 +67,15 @@ export default async function Home() {
       </div>
 
       {/* table */}
-      <div className="flex flex-col gap-6 pb-4">
-        <MyTable data={users} columns={columns} />
-      </div>
+      {users.length > 0 ? (
+        <div className="flex flex-col gap-6 pb-4">
+          <MyTable data={users} columns={columns} />
+        </div>
+      ) : (
+        <div className="mx-auto mt-12">
+          <Spinner className="size-8" />
+        </div>
+      )}
     </div>
   );
 }
