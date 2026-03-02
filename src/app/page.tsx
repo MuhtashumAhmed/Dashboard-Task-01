@@ -2,12 +2,14 @@ import { fetchUsers } from "@/lib/fetchUsers";
 
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Users } from "@deemlol/next-icons";
-import MyTable from "@/components/MyTable";
+
 import Link from "next/link";
 import { Link as ExternalLink } from "@deemlol/next-icons";
 import Bargraph from "@/components/Bargraph";
 import PieChartComponent from "@/components/PieChartComponent";
 import { Spinner } from "@/components/ui/spinner";
+import UsersTableSection from "@/components/UsersTableSection";
+import { Suspense } from "react";
 
 const columns = [
   { label: "Name", key: "name" },
@@ -67,15 +69,9 @@ export default async function Home() {
       </div>
 
       {/* table */}
-      {users.length > 0 ? (
-        <div className="flex flex-col gap-6 pb-4">
-          <MyTable data={users} columns={columns} />
-        </div>
-      ) : (
-        <div className="mx-auto mt-12">
-          <Spinner className="size-8" />
-        </div>
-      )}
+      <Suspense fallback={<Spinner className="size-8" />}>
+        <UsersTableSection />
+      </Suspense>
     </div>
   );
 }
