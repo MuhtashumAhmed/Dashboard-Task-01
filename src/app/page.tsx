@@ -2,41 +2,11 @@ import { fetchUsers } from "@/lib/fetchUsers";
 
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Users } from "@deemlol/next-icons";
-
-import Link from "next/link";
-import { Link as ExternalLink } from "@deemlol/next-icons";
 import Bargraph from "@/components/Bargraph";
 import PieChartComponent from "@/components/PieChartComponent";
 import { Spinner } from "@/components/ui/spinner";
 import UsersTableSection from "@/components/UsersTableSection";
 import { Suspense } from "react";
-
-const columns = [
-  { label: "Name", key: "name" },
-
-  { label: "Email", key: "email" },
-
-  {
-    label: "Website",
-    key: "website",
-    render: (user: any) => (
-      <div className="flex items-end gap-1">
-        <ExternalLink size={12} />
-        <Link
-          href={`https://${user.website}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className=" underline hover:opacity-80"
-        >
-          {user.website}
-        </Link>
-      </div>
-    ),
-  },
-
-  { label: "Company", key: "company.name" },
-  { label: "City", key: "address.city" },
-];
 
 export default async function Home() {
   // data fetching
